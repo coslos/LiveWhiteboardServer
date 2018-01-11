@@ -8,6 +8,41 @@
 </head>
 <body>
 
+<div class="modal" id="sessionModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Live Whiteboard</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col-sm-12">
+              <button id="createSession" class="btn btn-primary">
+                Create a Session
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 form-group">
+              <input id="sessionIdJoinSession" class="form-control" placeholder="Session Id" type="text">
+            </div>
+            <div class="col-sm-4">
+              <button id="joinSession" class="btn btn-primary">
+                Join a Session
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <canvas id="whiteboard"></canvas>
 
 <div class="colors">
@@ -25,5 +60,8 @@
         crossorigin="anonymous"></script>
 <script src="./js/bootstrap.js"></script>
 <script src="./js/index.js"></script>
+<script>
+  $('#sessionModal').modal('show');
+</script>
 </body>
 </html>
