@@ -7,7 +7,7 @@
 (function () {
 
   const socket = io();
-  const canvas = document.getElementsByClassName('whiteboard')[0];
+  const canvas = document.getElementById('whiteboard');
   const colors = document.getElementsByClassName('color');
   const context = canvas.getContext('2d');
 
@@ -15,6 +15,9 @@
     color: 'black'
   };
   let drawing = false;
+
+  window.addEventListener('resize', onResize, false);
+  onResize();
 
   canvas.addEventListener('mousedown', onMouseDown);
   canvas.addEventListener('mouseup', onMouseUp);
@@ -25,10 +28,8 @@
     colors[i].addEventListener('click', onColorUpdate, false);
   }
 
-  socket.on('drawing', onDrawingEvent);
 
-  window.addEventListener('resize', onResize, false);
-  onResize();
+  socket.on('drawing', onDrawingEvent);
 
 
   function drawLine(x0, y0, x1, y1, color, emit) {
@@ -96,8 +97,8 @@
   }
 
   function onDrawingEvent(data) {
-    var w = canvas.width;
-    var h = canvas.height;
+    let w = canvas.width;
+    let h = canvas.height;
     drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
   }
 
