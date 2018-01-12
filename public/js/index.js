@@ -3,9 +3,27 @@
  */
 
 'use strict';
+//
+// (function () {
+//
+//
+//   canvas.addEventListener('mousedown', onMouseDown);
+//   canvas.addEventListener('mouseup', onMouseUp);
+//   canvas.addEventListener('mouseout', onMouseUp);
+//   canvas.addEventListener('mousemove', throttle(onMouseMove, 10));
+//
+//   for (var i = 0; i < colors.length; i++) {
+//     colors[i].addEventListener('click', onColorUpdate, false);
+//   }
+//
+//
+//   socket.on('drawing', onDrawingEvent);
+//
+//
+// })();
 
-(function () {
-
+$(document).ready(function () {
+  console.log(1)
   const socket = io();
   const canvas = document.getElementById('whiteboard');
   const colors = document.getElementsByClassName('color');
@@ -16,7 +34,7 @@
   };
   let drawing = false;
 
-  window.addEventListener('resize', onResize, false);
+  $(window).resize(onResize)
   onResize();
 
   canvas.addEventListener('mousedown', onMouseDown);
@@ -28,11 +46,12 @@
     colors[i].addEventListener('click', onColorUpdate, false);
   }
 
-
   socket.on('drawing', onDrawingEvent);
 
 
   function drawLine(x0, y0, x1, y1, color, emit) {
+    y0 -= 50;
+    y1 -= 50;
     context.beginPath();
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
@@ -44,8 +63,8 @@
     if (!emit) {
       return;
     }
-    var w = canvas.width;
-    var h = canvas.height;
+    let w = canvas.width;
+    let h = canvas.height;
 
     socket.emit('drawing', {
       x0: x0 / w,
@@ -107,5 +126,4 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-
-})();
+});
