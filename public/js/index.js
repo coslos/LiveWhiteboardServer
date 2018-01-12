@@ -112,7 +112,7 @@ $(document).ready(function () {
     console.log(1)
     if (data.success) {
       $topBar.empty().append(`
-      <div class="col-3 ml-auto">Session Id: ${data.sessionId}</div>
+      <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>
     
     `)
     }
