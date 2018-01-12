@@ -12,7 +12,8 @@ $(document).ready(function () {
   const context = canvas.getContext('2d');
 
   let current = {
-    color: 'black'
+    color: 'black',
+    emitTo: 'drawing'
   };
   let drawing = false;
 
@@ -30,6 +31,7 @@ $(document).ready(function () {
 
   socket.on('drawing', onDrawingEvent);
   socket.on("createdSession", onCreatedSession);
+  socket.on("drawingInSession", onDrawingInSessionEvent);
 
   $('#createSession').click(function () {
     socket.emit("createSession");
@@ -50,16 +52,23 @@ $(document).ready(function () {
     if (!emit) {
       return;
     }
+
     let w = canvas.width;
     let h = canvas.height;
 
-    socket.emit('drawing', {
+    let emitToServerObject = {
       x0: x0 / w,
       y0: y0 / h,
       x1: x1 / w,
       y1: y1 / h,
       color: color
-    });
+    };
+
+    if (current.sessionId) {
+      emitToServerObject.sessionId = current.sessionId;
+    }
+    socket.emit(current.emitTo, emitToServerObject);
+
   }
 
   function onMouseDown(e) {
@@ -108,13 +117,21 @@ $(document).ready(function () {
     drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color);
   }
 
+  function onDrawingInSessionEvent(data) {
+    let w = canvas.width;
+    let h = canvas.height;
+    drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color);
+  }
+
   function onCreatedSession(data) {
     console.log(1)
     if (data.success) {
+      socket.off('drawing');
+      current.sessionId = data.sessionId;
+      current.emitTo = 'drawingInSession';
       $topBar.empty().append(`
-      <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>
-    
-    `)
+        <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>    
+      `)
     }
   }
 
