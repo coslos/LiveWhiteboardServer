@@ -30,6 +30,16 @@ function onConnection(socket) {
       success: true,
       sessionId: newSessionId
     });
+  });
+
+  socket.on("joinSession", (data) => {
+    if (currentSessionsArray.includes(data.sessionId)) {
+      socket.join(data.sessionId);
+      socket.emit("joinedSession", {
+        success: true,
+        sessionId: data.sessionId
+      })
+    }
   })
 }
 
