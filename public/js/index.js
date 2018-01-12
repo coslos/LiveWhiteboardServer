@@ -31,10 +31,17 @@ $(document).ready(function () {
 
   socket.on('drawing', onDrawingEvent);
   socket.on("createdSession", onCreatedSession);
+  socket.on("joinedSession", onJoinedSession);
   socket.on("drawingInSession", onDrawingInSessionEvent);
 
   $('#createSession').click(function () {
     socket.emit("createSession");
+  });
+
+  $('#joinSession').click(function () {
+    socket.emit("joinSession", {
+      sessionId: $('#sessionIdJoinSession').val()
+    })
   });
 
 
@@ -125,6 +132,17 @@ $(document).ready(function () {
 
   function onCreatedSession(data) {
     console.log(1)
+    if (data.success) {
+      socket.off('drawing');
+      current.sessionId = data.sessionId;
+      current.emitTo = 'drawingInSession';
+      $topBar.empty().append(`
+        <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>    
+      `)
+    }
+  }
+
+  function onJoinedSession(data) {
     if (data.success) {
       socket.off('drawing');
       current.sessionId = data.sessionId;
