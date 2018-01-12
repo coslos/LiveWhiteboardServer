@@ -15,13 +15,17 @@ app.use(express.static(__dirname + '/public'));
 
 function onConnection(socket) {
   socket.on('drawing', (data) => {
-    console.log(data)
     socket.broadcast.emit('drawing', data)
+  });
+
+  socket.on('drawingInSession', (data) => {
+    socket.broadcast.to(data.sessionId).emit('drawingInSession', data);
   });
 
   socket.on("createSession", () => {
     let newSessionId = utils.randomSessionId(currentSessionsArray);
     currentSessionsArray.push(newSessionId);
+    socket.join(newSessionId);
     socket.emit("createdSession", {
       success: true,
       sessionId: newSessionId
