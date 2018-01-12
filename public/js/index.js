@@ -131,7 +131,6 @@ $(document).ready(function () {
   }
 
   function onCreatedSession(data) {
-    console.log(1)
     if (data.success) {
       socket.off('drawing');
       current.sessionId = data.sessionId;
