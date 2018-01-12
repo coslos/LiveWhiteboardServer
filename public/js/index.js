@@ -50,11 +50,11 @@ $(document).ready(function () {
 
 
   function drawLine(x0, y0, x1, y1, color, emit) {
-    y0 -= 50;
-    y1 -= 50;
+    // y0 -= 50;
+    // y1 -= 50;
     context.beginPath();
-    context.moveTo(x0, y0);
-    context.lineTo(x1, y1);
+    context.moveTo(x0, y0 - 50);
+    context.lineTo(x1, y1 - 50);
     context.strokeStyle = color;
     context.lineWidth = 2;
     context.stroke();
