@@ -8,6 +8,9 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 
+const utils = require('./utils');
+const currentSessionsArray = [];
+
 app.use(express.static(__dirname + '/public'));
 
 function onConnection(socket) {
@@ -17,10 +20,12 @@ function onConnection(socket) {
   });
 
   socket.on("createSession", () => {
-    socket.emit("createdSession",{
+    let newSessionId = utils.randomSessionId(currentSessionsArray);
+    currentSessionsArray.push(newSessionId);
+    socket.emit("createdSession", {
       success: true,
-      sessionId: "abc"
-    })
+      sessionId: newSessionId
+    });
   })
 }
 
