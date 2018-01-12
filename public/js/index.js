@@ -137,7 +137,8 @@ $(document).ready(function () {
       current.emitTo = 'drawingInSession';
       $topBar.empty().append(`
         <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>    
-      `)
+      `);
+      context.clearRect(0, 0, canvas.width, canvas.height);
     }
   }
 
@@ -148,7 +149,8 @@ $(document).ready(function () {
       current.emitTo = 'drawingInSession';
       $topBar.empty().append(`
         <div class="col-3 ml-auto text-white">Session Id: ${data.sessionId}</div>    
-      `)
+      `);
+      context.clearRect(0, 0, canvas.width, canvas.height);
     }
   }
 
