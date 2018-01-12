@@ -6,6 +6,7 @@
 
 $(document).ready(function () {
   const socket = io();
+  const $topBar = $('#topBar');
   const canvas = document.getElementById('whiteboard');
   const colors = document.getElementsByClassName('color');
   const context = canvas.getContext('2d');
@@ -28,9 +29,10 @@ $(document).ready(function () {
   }
 
   socket.on('drawing', onDrawingEvent);
+  socket.on("createdSession", onCreatedSession);
 
   $('#createSession').click(function () {
-
+    socket.emit("createSession");
   });
 
 
@@ -104,6 +106,16 @@ $(document).ready(function () {
     let w = canvas.width;
     let h = canvas.height;
     drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color);
+  }
+
+  function onCreatedSession(data) {
+    console.log(1)
+    if (data.success) {
+      $topBar.empty().append(`
+      <div class="col-3 ml-auto">Session Id: ${data.sessionId}</div>
+    
+    `)
+    }
   }
 
   // make the canvas fill its parent

@@ -15,6 +15,13 @@ function onConnection(socket) {
     console.log(data)
     socket.broadcast.emit('drawing', data)
   });
+
+  socket.on("createSession", () => {
+    socket.emit("createdSession",{
+      success: true,
+      sessionId: "abc"
+    })
+  })
 }
 
 io.on('connection', onConnection);
