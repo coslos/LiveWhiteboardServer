@@ -10,6 +10,21 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+.container-fluid{
+    height: 100%;
+    padding: 0;
+}
+
+#mainContent{
+    height: 100%;
+}
+
+#topBar{
+    height: 50px;
+    background-color: #005cbf;
 }
 
 /**
@@ -31,7 +46,7 @@ html, body {
 }
 
 .color {
-    display: inline-block;
+    display: block;
     height: 48px;
     width: 48px;
 }
