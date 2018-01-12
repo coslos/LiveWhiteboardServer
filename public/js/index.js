@@ -3,27 +3,8 @@
  */
 
 'use strict';
-//
-// (function () {
-//
-//
-//   canvas.addEventListener('mousedown', onMouseDown);
-//   canvas.addEventListener('mouseup', onMouseUp);
-//   canvas.addEventListener('mouseout', onMouseUp);
-//   canvas.addEventListener('mousemove', throttle(onMouseMove, 10));
-//
-//   for (var i = 0; i < colors.length; i++) {
-//     colors[i].addEventListener('click', onColorUpdate, false);
-//   }
-//
-//
-//   socket.on('drawing', onDrawingEvent);
-//
-//
-// })();
 
 $(document).ready(function () {
-  console.log(1)
   const socket = io();
   const canvas = document.getElementById('whiteboard');
   const colors = document.getElementsByClassName('color');
@@ -34,7 +15,7 @@ $(document).ready(function () {
   };
   let drawing = false;
 
-  $(window).resize(onResize)
+  $(window).resize(onResize);
   onResize();
 
   canvas.addEventListener('mousedown', onMouseDown);
@@ -48,13 +29,17 @@ $(document).ready(function () {
 
   socket.on('drawing', onDrawingEvent);
 
+  $('#createSession').click(function () {
+
+  });
+
 
   function drawLine(x0, y0, x1, y1, color, emit) {
-    // y0 -= 50;
-    // y1 -= 50;
+    y0 -= 50;
+    y1 -= 50;
     context.beginPath();
-    context.moveTo(x0, y0 - 50);
-    context.lineTo(x1, y1 - 50);
+    context.moveTo(x0, y0);
+    context.lineTo(x1, y1);
     context.strokeStyle = color;
     context.lineWidth = 2;
     context.stroke();
@@ -118,7 +103,7 @@ $(document).ready(function () {
   function onDrawingEvent(data) {
     let w = canvas.width;
     let h = canvas.height;
-    drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
+    drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color);
   }
 
   // make the canvas fill its parent
