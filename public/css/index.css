@@ -49,6 +49,7 @@ html, body {
     display: block;
     height: 48px;
     width: 48px;
+    border: 1px solid black;
 }
 
 .color.black {
