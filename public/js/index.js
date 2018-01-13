@@ -23,7 +23,7 @@ $(document).ready(function () {
   canvas.addEventListener('mousedown', onMouseDown);
   canvas.addEventListener('mouseup', onMouseUp);
   canvas.addEventListener('mouseout', onMouseUp);
-  canvas.addEventListener('mousemove', throttle(onMouseMove, 10));
+  canvas.addEventListener('mousemove', throttle(onMouseMove, 5));
 
   for (var i = 0; i < colors.length; i++) {
     colors[i].addEventListener('click', onColorUpdate, false);
@@ -45,14 +45,18 @@ $(document).ready(function () {
   });
 
 
-  function drawLine(x0, y0, x1, y1, color, emit) {
+  function drawLine(x0, y0, x1, y1, color, emit, strokeWidth) {
     y0 -= 50;
     y1 -= 50;
     context.beginPath();
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = 2;
+    context.lineWidth = (strokeWidth ? strokeWidth : 4) / 2;
+    if (color === "white") {
+      context.lineWidth = 25;
+    }
+
     context.stroke();
     context.closePath();
 
@@ -68,7 +72,8 @@ $(document).ready(function () {
       y0: y0 / h,
       x1: x1 / w,
       y1: y1 / h,
-      color: color
+      color: color,
+      strokeWidth: context.lineWidth * 2
     };
 
     if (current.sessionId) {
@@ -127,7 +132,7 @@ $(document).ready(function () {
   function onDrawingInSessionEvent(data) {
     let w = canvas.width;
     let h = canvas.height;
-    drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color);
+    drawLine(data.x0 * w, data.y0 * h + 50, data.x1 * w, data.y1 * h + 50, data.color, false, data.strokeWidth);
   }
 
   function onCreatedSession(data) {
