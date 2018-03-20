@@ -20,6 +20,10 @@ $(document).ready(function () {
   $(window).resize(onResize);
   onResize();
 
+  $('#clear').click(function () {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  });
+
   canvas.addEventListener('mousedown', onMouseDown);
   canvas.addEventListener('mouseup', onMouseUp);
   canvas.addEventListener('mouseout', onMouseUp);

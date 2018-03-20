@@ -24,7 +24,7 @@ html, body {
 
 #topBar{
     height: 50px;
-    background-color: #005cbf;
+    background-color: #74be4e;
 }
 
 /**
@@ -70,4 +70,8 @@ html, body {
 
 .color.yellow {
     background-color: yellow;
+}
+
+#topBar button{
+    background-color: #344148;
 }
