@@ -1,6 +1,16 @@
+> Guess you're a contributor now!
+>
+> **This is the most important file for you to read as a contributor.** If written well, this file will explain *everything* you need to know in order to successfully contribute to the project. If a project *does not* have this file, you should ask for guidelines by opening an issue.
+
 # Contributor's Guide
 
-### Getting Started
+Thanks for your interest in contributing! Please read carefully through our guidelines below to ensure that your contribution adheres to our project's standards.
+
+## Code of Conduct
+
+To hold a safe space for all contributors, we expect all project participants to adhere to our Code of Conduct. Please read the [full text](/.github/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
+## Getting Started
 
 1.  If you are new to Git and Github, it is advisable you go through[this
     link](https://guides.github.com/)
@@ -63,7 +73,7 @@
     issue you're fixing. So an example would be `Closes #42` would close issue
     `#42`.
 
-### Submitting a Pull Request
+## Submitting a Pull Request
 
 What is a pull request?
 [Visit link](https://help.github.com/articles/about-pull-requests/)
@@ -77,4 +87,4 @@ In a situation where by somebody decides to fix an issue but doesn't follow up
 for a particular period of time, say 2-3 weeks, it's acceptable to still pick
 up the issue but make sure to leave a comment.
 
-### Helpful Resources
+## Helpful Resources
