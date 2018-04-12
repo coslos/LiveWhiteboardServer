@@ -10,6 +10,12 @@ Thanks for your interest in contributing! Please read carefully through our guid
 
 To hold a safe space for all contributors, we expect all project participants to adhere to our Code of Conduct. Please read the [full text](/.github/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
+## Issue Tracking
+
+We use [GitHub Issues](/issues) to track all tasks related to this project.
+
+To help you get your feet wet and get you familiar with our contribution process, we have a list of friendly issues (to be added soon) that contain tasks which are fairly easy to fix. This is a great place to get started.
+
 ## Getting Started
 
 1.  If you are new to Git and Github, it is advisable you go through[this
