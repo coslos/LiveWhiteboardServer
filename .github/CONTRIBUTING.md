@@ -12,7 +12,7 @@ To hold a safe space for all contributors, we expect all project participants to
 
 ## Issue Tracking
 
-We use [GitHub Issues](issues) to track all tasks related to this project.
+We use [GitHub Issues](https://github.com/coslos/LiveWhiteboard-Website/issues) to track all tasks related to this project.
 
 To help you get your feet wet and get you familiar with our contribution process, we have a list of friendly issues (to be added soon) that contain tasks which are fairly easy to fix. This is a great place to get started.
 
@@ -37,7 +37,7 @@ Once you get the project built, see if you can fix some issues(to be updated soo
 
 All GitHub projects are backed by a version control software called *Git*. You'll need to set up Git in order to contribute to *any* project on GitHub.
 
-If you are new to Git and Github, it is advisable you go through[this
+If you are new to Git and Github, it is advisable you go through [this
     link](https://guides.github.com/)
     before moving to the next step.
 
