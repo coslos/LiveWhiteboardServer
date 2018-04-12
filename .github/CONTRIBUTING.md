@@ -12,7 +12,7 @@ To hold a safe space for all contributors, we expect all project participants to
 
 ## Issue Tracking
 
-We use [GitHub Issues](/issues) to track all tasks related to this project.
+We use [GitHub Issues](issues) to track all tasks related to this project.
 
 To help you get your feet wet and get you familiar with our contribution process, we have a list of friendly issues (to be added soon) that contain tasks which are fairly easy to fix. This is a great place to get started.
 
