@@ -147,7 +147,7 @@ up the issue but make sure to leave a comment.
 5.  Push your commits to your Github Fork:
 
     ```shell
-    git push -u origin branch-name
+    git push origin branch-name
     ```
 
 6.  Submit a pull request.
