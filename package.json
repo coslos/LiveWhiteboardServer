@@ -4,18 +4,19 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bhavyaagg/LiveWhiteboardServer.git"
+    "url": "git+https://github.com/coslos/LiveWhiteboard-Website.git"
   },
   "author": "Bhavya Aggarwal <bhavyaaggarwal1209@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bhavyaagg/LiveWhiteboardServer/issues"
+    "url": "https://github.com/coslos/LiveWhiteboard-Website/issues"
   },
-  "homepage": "https://github.com/bhavyaagg/LiveWhiteboardServer#readme",
+  "homepage": "https://github.com/coslos/LiveWhiteboard-Website#readme",
   "dependencies": {
     "express": "^4.16.2",
     "socket.io": "^2.0.4"
