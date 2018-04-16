@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Live Whiteboard</title>
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/index.css">
+    <meta charset="UTF-8">
+    <title>Live Whiteboard</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 
@@ -43,36 +43,35 @@
 <!--</div>-->
 
 <div class="container-fluid">
-  <div id="topBar" class="row align-items-center no-gutters">
-    <div class="col"></div>
-    <div class="col-2">
-      <button id="createSession" class="btn btn-success">
-        Create a Session
-      </button>
+    <div id="topBar" class="row align-items-center no-gutters">
+        <div class="col"></div>
+        <div class="col-2">
+            <button id="createSession" class="btn btn-success">
+                Create a Session
+            </button>
+        </div>
+        <div class="col-2 ml-1 mr-2">
+            <input id="sessionIdJoinSession" class="form-control" placeholder="Session Id" type="text">
+        </div>
+        <div class="col-2">
+            <button id="joinSession" class="btn btn-success">
+                Join a Session
+            </button>
+        </div>
     </div>
-    <div class="col-2 ml-1 mr-2">
-      <input id="sessionIdJoinSession" class="form-control" placeholder="Session Id" type="text">
+    <div id="mainContent" class="row">
+        <div class="col">
+            <canvas id="whiteboard"></canvas>
+            <div class="sideBar text-center">
+                <div class="color black"></div>
+                <div class="color red"></div>
+                <div class="color green"></div>
+                <div class="color blue"></div>
+                <div class="color white"></div>
+                <button id="clear" class="m-1 btn btn-danger">X</button>
+            </div>
+        </div>
     </div>
-    <div class="col-2">
-      <button id="joinSession" class="btn btn-success">
-        Join a Session
-      </button>
-    </div>
-  </div>
-  <div id="mainContent" class="row">
-    <div class="col-12">
-      <canvas id="whiteboard"></canvas>
-
-      <div class="colors">
-        <div class="color black"></div>
-        <div class="color red"></div>
-        <div class="color green"></div>
-        <div class="color blue"></div>
-        <div class="color white"></div>
-        <button id="clear" class="m-1 btn btn-danger">X</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 
@@ -84,7 +83,7 @@
 <script src="./js/bootstrap.js"></script>
 <script src="./js/index.js"></script>
 <script>
-  $('#sessionModal').modal('show');
+    $('#sessionModal').modal('show');
 </script>
 </body>
 </html>

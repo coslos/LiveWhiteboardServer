@@ -13,17 +13,17 @@ html, body {
     overflow: hidden;
 }
 
-.container-fluid{
+.container-fluid {
     height: 100%;
     padding: 0;
 }
 
-#mainContent{
+#mainContent {
     height: 100%;
 }
 
-#topBar{
-    height: 50px;
+#topBar {
+    height: 60px;
     background-color: #74be4e;
 }
 
@@ -41,15 +41,21 @@ html, body {
     top: 0;
 }
 
-.colors {
+.sideBar {
     position: fixed;
+    width: 60px;
+    height: 100%;
+    background-color: #74be4e;
+    padding-top: 10px;
 }
 
 .color {
     display: block;
+    margin-left: 6px;
     height: 48px;
     width: 48px;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 .color.black {
@@ -72,6 +78,10 @@ html, body {
     background-color: yellow;
 }
 
-#topBar button{
+.color.white {
+    background-color: white;
+}
+
+#topBar button {
     background-color: #344148;
 }
