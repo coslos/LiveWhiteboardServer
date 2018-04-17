@@ -23,11 +23,11 @@ node server.js
 * **Apoorvaa Gupta** - *Project Lead* - [Github](https://github.com/apoorvaagupta)
 * **Bhavya Aggarwal** - *Project Lead* - [Github](https://github.com/bhavyaagg)
 
-Check [CONTRIBUTORS.md](.github/CONTRIBUTING.md) for all the contributors.
+Check [CONTRIBUTORS.md](To be updated soon) for all the contributors.
 
 ## Contributing
 
-Pull requests are always welcome!
+Pull requests are always welcome! Check [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more.
 
 ## Reach Us
 Your feedbacks are always appreciated. You can reach out to us for any feature or issue. Hit us by reporting an issue here [Issues](https://github.com/coslos/LiveWhiteboard-Website/issues) or mail us [Apoorvaa Gupta](mailto:ag@cb.lk) | [Bhavya Aggarwal](mailto:b@cb.lk).
