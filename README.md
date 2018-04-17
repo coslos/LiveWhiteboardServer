@@ -23,7 +23,7 @@ node server.js
 * **Apoorvaa Gupta** - *Project Lead* - [Github](https://github.com/apoorvaagupta)
 * **Bhavya Aggarwal** - *Project Lead* - [Github](https://github.com/bhavyaagg)
 
-Check [CONTRIBUTORS.md](To be updated soon) for all the contributors.
+Check [CONTRIBUTORS.md]() (To be updated soon) for all the contributors.
 
 ## Contributing
 
